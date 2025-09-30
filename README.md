@@ -1,53 +1,55 @@
-> Edited for use in IDX on 07/09/12
+# Jejak Meong App
 
-# Welcome to your Expo app 👋
+Jejak Meong App adalah aplikasi mobile untuk membantu menemukan dan melaporkan kucing yang hilang atau ditemukan di sekitar Anda. Aplikasi ini menampilkan laporan pada peta interaktif dan dalam format daftar, sehingga komunitas dapat saling membantu menemukan kembali teman berbulu mereka dengan mudah.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Fitur Utama
 
-## Get started
+- **Peta Interaktif:** Lihat laporan kucing yang hilang atau ditemukan di sekitar Anda menggunakan Google Maps dengan clustering.
+- **Tampilan Daftar:** Jelajahi semua laporan dalam format kartu yang mudah dibaca. (fitur mendatang)
+- **Pelaporan Kucing:** Pengguna yang sudah login dapat melaporkan kucing baru dengan detail seperti nama, jenis kelamin, foto, dan lokasi terakhir terlihat.
+- **Login dengan Google:** Sistem autentikasi yang aman menggunakan Firebase Authentication. (fitur mendatang)
+- **Saran Ras Berbasis AI:** Unggah foto kucing dan dapatkan saran ras menggunakan Google AI (Gemini) melalui Genkit. (fitur mendatang)
+- **Dukungan Multibahasa:** Antarmuka tersedia dalam Bahasa Indonesia (default) dan Inggris. (fitur mendatang)
+- **Mode Gelap/Terang:** Tema aplikasi dapat diganti sesuai preferensi pengguna. (fitur mendatang)
+- **Desain Responsif untuk Mobile:** Tampilan yang optimal di perangkat Android dan iOS.
 
-#### Android
+## Teknologi yang Digunakan
 
-Android previews are defined as a `workspace.onStart` hook and started as a vscode task when the workspace is opened/started.
+- **Framework Mobile:** React Native + Expo
+- **Navigasi:** React Navigation
+- **Database:** Firebase Firestore
+- **Autentikasi:** Firebase Authentication
+- **Peta & Cluster:** react-native-maps + react-native-map-clustering
+- **UI & Styling:** Expo Vector Icons dan Tailwind CSS (via library React Native)
+- **Bahasa:** TypeScript
 
-Note, if you can't find the task, either:
-- Rebuild the environment (using command palette: `IDX: Rebuild Environment`), or
-- Run `npm run android -- --tunnel` command manually run android and see the output in your terminal. The device should pick up this new command and switch to start displaying the output from it.
+## Pengaturan & Menjalankan di Lokal
 
-In the output of this command/task, you'll find options to open the app in a
+1. **Clone Repositori:**
+    ```bash
+    git clone <URL_REPOSITORI_ANDA>
+    cd jejak-anabul-app
+    ```
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+2. **Install Dependencies:**
+    ```bash
+    npm install
+    ```
 
-You'll also find options to open the app's developer menu, reload the app, and more.
+3. **Siapkan Environment Variables:**
+    Buat file baru bernama `.env` di direktori root proyek Anda. Masukkan konfigurasi Firebase dan API key AI:
 
-#### Web
+    ```env
+    FIREBASE_API_KEY=AIz...
+    FIREBASE_AUTH_DOMAIN=...
+    FIREBASE_PROJECT_ID=...
+    FIREBASE_STORAGE_BUCKET=...
+    FIREBASE_MESSAGING_SENDER_ID=...
+    FIREBASE_APP_ID=...
+    ```
 
-Web previews will be started and managred automatically. Use the toolbar to manually refresh.
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+4. **Jalankan Aplikasi di Android:**
+    ```bash
+    npm run android
+    ```
+    Aplikasi akan berjalan di emulator Android atau perangkat fisik yang terhubung.
